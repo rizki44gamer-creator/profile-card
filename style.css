@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+
+    font-family: Arial, sans-serif;
+    color: white;
+
+    background-image: url("asta-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: -1;
+}
+
+.card {
+    width: 900px;
+    max-width: 100%;
+
+    display: grid;
+    grid-template-columns: 40% 60%;
+
+    background: #181818;
+
+    border: 1px solid #333;
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+}
+
+.photo {
+    height: 580px;
+    overflow: hidden;
+    background: #111;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.content {
+    padding: 55px 45px;
+}
+
+.label {
+    color: #e00000;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 42px;
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.red-line {
+    width: 60px;
+    height: 4px;
+    margin: 22px 0 30px;
+    background: #e00000;
+}
+
+.details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.details div {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #333;
+}
+
+.details .full {
+    grid-column: 1 / -1;
+}
+
+.details span {
+    display: block;
+    color: #888;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    margin-bottom: 7px;
+}
+
+.details strong {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.quote {
+    padding-left: 15px;
+    border-left: 3px solid #e00000;
+}
+
+.quote span {
+    color: #e00000;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.quote p {
+    margin-top: 8px;
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+button {
+    margin-top: 30px;
+    padding: 11px 20px;
+
+    background: transparent;
+    color: white;
+
+    border: 1px solid #555;
+    border-radius: 5px;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #e00000;
+    border-color: #e00000;
+}
+
+body.active .card {
+    border-color: #e00000;
+    box-shadow: 0 0 30px rgba(224, 0, 0, 0.4);
+}
+
+body.active button {
+    background: #e00000;
+    border-color: #e00000;
+}
+
+@media (max-width: 700px) {
+
+    .card {
+        grid-template-columns: 1fr;
+    }
+
+    .photo {
+        height: 400px;
+    }
+
+    .content {
+        padding: 35px 25px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .details {
+        grid-template-columns: 1fr;
+    }
+
+    .details .full {
+        grid-column: auto;
+    }
+}
